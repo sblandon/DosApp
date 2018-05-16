@@ -1,0 +1,14 @@
+<!--The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+    <input type="text"  [(ngModel)]="title">
+    Welcome to {{ title + 'lalala' }}!
+    <button (click)="hello()">say hi</button>
+
+
+    <h1 *ngIf="title === 'bb'">the valueeeeeee</h1>
+</div> 
+-->
+<!-- you named in this case sebastian and camilo-->
+<app-first #sebastian (fistTalkin)="fisrtIsTalkin($event)" (changeValueInput)="receiveValueInput($event)"></app-first>
+<app-second #camilo   (secondTalkin)="secondIsTalkin($event)" (callDadChild1)="receiveValueInputChild1($event)"></app-second>
+<button (click)="changeMySonClothes()">Change clothes</button>
