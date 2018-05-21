@@ -9,6 +9,7 @@
 </div> 
 -->
 <!-- you named in this case sebastian and camilo-->
-<app-first #sebastian (fistTalkin)="fisrtIsTalkin($event)" (changeValueInput)="receiveValueInput($event)"></app-first>
-<app-second #camilo   (secondTalkin)="secondIsTalkin($event)" (callDadChild1)="receiveValueInputChild1($event)"></app-second>
-<button (click)="changeMySonClothes()">Change clothes</button>
+<app-first #sebastian [picturesFromParent]="pictures" (fistTalkin)="fisrtIsTalkin($event)" (changeValueInput)="receiveValueInput($event)"></app-first>
+<app-second #camilo [picturesFromParent]="pictures"   (secondTalkin)="secondIsTalkin($event)" (callDadChild1)="receiveValueInputChild1($event)"></app-second>
+<button (click)="showPictures()">Show pictures</button>
+

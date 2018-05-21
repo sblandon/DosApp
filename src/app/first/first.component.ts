@@ -1,4 +1,4 @@
-import { Component, OnInit, Provider, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Provider, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
   selector: 'app-first',
@@ -12,11 +12,13 @@ export class FirstComponent implements OnInit {
   name = null
   time = null;
   @Output() fistTalkin = new EventEmitter<any>();
-  @Output() changeValueInput = new EventEmitter<any>();
+  @Output() changeValueInput = new EventEmitter<any>();//12
+  @Input('picturesFromParent') pictures; //6
+
   constructor() { }
 
   ngOnInit() {
-
+    console.dir(this.pictures);
   }
 
   submit() {
@@ -34,7 +36,7 @@ export class FirstComponent implements OnInit {
   }
 
   //function that talks with the father to pass info to the other child
-  callEmit(){
+  callEmit(){//12 receive event on the html
     this.changeValueInput.emit(this.ingredientName);
   }
 

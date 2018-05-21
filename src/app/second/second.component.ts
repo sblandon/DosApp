@@ -1,4 +1,4 @@
-import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter ,Input} from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -7,12 +7,19 @@ import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 })
 export class SecondComponent implements OnInit {
   secondSonCalls: any;
-  @Output('secondTalkin') callDad = new EventEmitter<any>();
+  @Output('secondTalkin') callDad = new EventEmitter<any>();//7
   @Output('callDadChild1') callDadChild1 = new EventEmitter<any>();
+  @Input('picturesFromParent') pictures;
+
   secondSonListening: string;
   constructor() { }
 
   ngOnInit() {
+    console.dir(this.pictures);
+  }
+
+  showPictures(){
+    console.dir(this.pictures)
   }
 
   cry() {
